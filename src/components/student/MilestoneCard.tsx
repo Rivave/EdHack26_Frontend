@@ -78,7 +78,7 @@ export default function MilestoneCard({ milestone, onOpenChat }: Props) {
         )}
 
         {milestone.status === 'pending' && (
-          <span className="text-xs text-gray-400">Disponible próximamente</span>
+          <span className="text-xs text-gray-400">Pendiente</span>
         )}
       </div>
     </div>

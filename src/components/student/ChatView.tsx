@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import type { ChatMessage, InterestAnswers } from '../../types/student'
 import { ONBOARDING_QUESTIONS } from '../../config/onboardingQuestions'
 import { MILESTONES } from '../../config/milestones'
+import ianImage from '../../assets/coach-think-ib-roshi.jpeg'
 
 interface Props {
   studentName: string
@@ -65,7 +66,7 @@ function buildSystemContext(interests: InterestAnswers, courseName: string): str
     .map((milestone) => `${milestone.order}. ${milestone.title}: ${milestone.description}`)
     .join('\n')
 
-  return `Eres Coach Think IB, un tutor educativo para el curso ${courseName}. Debes dar feedback util en todo momento durante todo el proceso del proyecto, no solo durante la eleccion del tema. Al inicio ayudas al alumno a explorar intereses y elegir un tema; despues lo acompanas con plan de trabajo, borradores, desarrollo matematico, reflexion, conclusiones, entrega final y anexos. Relaciona tus sugerencias con conceptos matematicos reales, pide aclaraciones cuando falte informacion y da pasos concretos para avanzar al siguiente hito. Responde en espanol de Peru, de manera conversacional y cercana.\n\nHitos del curso:\n${milestones}\n\nIntereses iniciales del alumno:\n${parts}`
+  return `Eres IAN, un tutor educativo para el curso ${courseName}. Debes dar feedback util en todo momento durante todo el proceso del proyecto, no solo durante la eleccion del tema. Al inicio ayudas al alumno a explorar intereses y elegir un tema; despues lo acompanas con plan de trabajo, borradores, desarrollo matematico, reflexion, conclusiones, entrega final y anexos. Relaciona tus sugerencias con conceptos matematicos reales, pide aclaraciones cuando falte informacion y da pasos concretos para avanzar al siguiente hito. Responde en espanol de Peru, de manera conversacional y cercana.\n\nHitos del curso:\n${milestones}\n\nIntereses iniciales del alumno:\n${parts}`
 }
 
 function serializeMessages(messages: ChatMessage[]): LLMRequest['messages'] {
@@ -216,11 +217,11 @@ export default function ChatView({ studentName, courseName, interests, onClose }
     <div className="flex h-full flex-col bg-gray-50">
       <header className="flex flex-shrink-0 items-center justify-between border-b border-gray-100 bg-white px-4 py-3">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold text-white">
-            IA
+          <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-indigo-50 ring-1 ring-indigo-100">
+            <img src={ianImage} alt="" className="h-full w-full object-cover" />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-800">Asistente</p>
+            <p className="text-sm font-medium text-gray-800">Profesor IAN</p>
             <p className="text-xs text-gray-400">{courseName}</p>
           </div>
         </div>
@@ -237,7 +238,7 @@ export default function ChatView({ studentName, courseName, interests, onClose }
 
       <div className="flex-shrink-0 border-b border-indigo-100 bg-indigo-50 px-4 py-2">
         <p className="text-center text-xs text-indigo-600">
-          El asistente recibe tus respuestas e hitos como contexto para darte feedback durante todo el proyecto.
+          Profesor IAN recibe tus respuestas e hitos como contexto para darte feedback durante todo el proyecto.
         </p>
       </div>
 
@@ -248,8 +249,8 @@ export default function ChatView({ studentName, courseName, interests, onClose }
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.role === 'assistant' && (
-              <div className="mr-2 mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold text-white">
-                IA
+              <div className="mr-2 mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-indigo-50 ring-1 ring-indigo-100">
+                <img src={ianImage} alt="" className="h-full w-full object-cover" />
               </div>
             )}
             <div
@@ -266,8 +267,8 @@ export default function ChatView({ studentName, courseName, interests, onClose }
 
         {loading && (
           <div className="flex justify-start">
-            <div className="mr-2 mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold text-white">
-              IA
+            <div className="mr-2 mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-indigo-50 ring-1 ring-indigo-100">
+              <img src={ianImage} alt="" className="h-full w-full object-cover" />
             </div>
             <div className="rounded-2xl rounded-tl-sm border border-gray-100 bg-white px-4 py-3 shadow-sm">
               <div className="flex h-4 items-center gap-1.5">
@@ -289,7 +290,7 @@ export default function ChatView({ studentName, courseName, interests, onClose }
             value={input}
             onChange={handleInput}
             onKeyDown={handleKeyDown}
-            placeholder={loading ? 'El asistente esta escribiendo...' : 'Escribe tu mensaje... (Enter para enviar)'}
+            placeholder={loading ? 'Profesor IAN esta escribiendo...' : 'Escribe tu mensaje... (Enter para enviar)'}
             rows={1}
             disabled={loading}
             className="flex-1 resize-none overflow-hidden rounded-xl border border-gray-200 px-4 py-2.5 text-sm text-gray-700 placeholder-gray-300 transition focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:cursor-not-allowed disabled:bg-gray-50"

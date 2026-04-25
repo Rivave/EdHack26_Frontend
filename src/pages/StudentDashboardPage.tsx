@@ -7,7 +7,7 @@ import MilestoneCard from '../components/student/MilestoneCard'
 import { MILESTONES } from '../config/milestones'
 import { AVAILABLE_COURSES } from '../types/auth'
 import type { InterestAnswers } from '../types/student'
-import coachThinkIb from '../assets/coach-think-ib-roshi.png'
+import ianImage from '../assets/coach-think-ib-roshi.jpeg'
 
 const storageKey = (userId: string) => `edhack_onboarding_${userId}`
 
@@ -142,24 +142,24 @@ export default function StudentDashboardPage() {
         </div>
       </main>
 
-      {/* Coach Think IB floating button */}
+      {/* Profesor IAN floating button */}
       {!chatOpen && (
         <button
           type="button"
           onClick={() => setChatOpen(true)}
-          aria-label="Abrir Coach Think IB"
+          aria-label="Abrir Profesor IAN"
           className="group fixed bottom-5 right-4 z-50 flex max-w-[calc(100vw-2rem)] items-center gap-3 rounded-full border border-white/80 bg-white py-2 pl-2 pr-4 text-left shadow-xl ring-1 ring-indigo-100 transition-all duration-150 hover:-translate-y-0.5 hover:shadow-2xl active:translate-y-0 active:scale-95 sm:bottom-6 sm:right-6"
         >
           <span className="flex h-14 w-14 flex-shrink-0 items-start justify-center overflow-hidden rounded-full bg-indigo-50 ring-2 ring-indigo-100">
             <img
-              src={coachThinkIb}
+              src={ianImage}
               alt=""
               className="h-full w-full object-cover"
             />
           </span>
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold leading-tight text-gray-900">
-              Coach Think IB
+              Profesor IAN
             </span>
             <span className="text-xs font-medium leading-tight text-indigo-600">
               Abre tu guía
