@@ -267,7 +267,7 @@ export default function DashboardPage() {
                         })}
                       </div>
                       <p className="mt-2 text-xs text-gray-400">
-                        Siguiente: {nextMilestone ? nextMilestone.title : 'curso completado'}
+                        {nextMilestone ? nextMilestone.title : 'curso completado'}
                       </p>
                     </div>
                   </div>
