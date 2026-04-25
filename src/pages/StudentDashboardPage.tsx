@@ -8,6 +8,7 @@ import { MILESTONES } from '../config/milestones'
 import { AVAILABLE_COURSES } from '../types/auth'
 import type { InterestAnswers } from '../types/student'
 import ianImage from '../assets/coach-think-ib-roshi.jpeg'
+import thinkmathLogo from '../assets/thinkmath_logo.jpeg'
 
 const storageKey = (userId: string) => `edhack_onboarding_${userId}`
 
@@ -64,6 +65,11 @@ export default function StudentDashboardPage() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-20">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <img
+              src={thinkmathLogo}
+              alt="ThinkMath"
+              className="h-8 w-auto object-contain"
+            />
             <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center text-sm font-semibold text-indigo-600 select-none">
               {user.name[0].toUpperCase()}
             </div>

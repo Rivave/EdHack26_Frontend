@@ -1,6 +1,7 @@
 import { Link, Navigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import DocumentUploadSection from '../components/student/DocumentUploadSection'
+import thinkmathLogo from '../assets/thinkmath_logo.jpeg'
 
 export default function StudentDocumentsPage() {
   const { user, logout } = useAuth()
@@ -13,6 +14,11 @@ export default function StudentDocumentsPage() {
       <header className="sticky top-0 z-20 border-b border-gray-100 bg-white">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
+            <img
+              src={thinkmathLogo}
+              alt="ThinkMath"
+              className="h-8 w-auto object-contain"
+            />
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
               {user.name[0].toUpperCase()}
             </div>

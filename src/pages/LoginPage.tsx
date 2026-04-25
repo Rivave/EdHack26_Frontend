@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import thinkmathLogo from '../assets/thinkmath_logo.jpeg'
 
 export default function LoginPage() {
   const { login, error } = useAuth()
@@ -17,6 +18,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-md p-8">
+        <img
+          src={thinkmathLogo}
+          alt="ThinkMath"
+          className="mx-auto mb-6 h-14 w-auto object-contain"
+        />
         <h1 className="text-2xl font-semibold text-gray-800 mb-1">Iniciar sesión</h1>
         <p className="text-sm text-gray-500 mb-6">
           ¿No tienes cuenta?{' '}

@@ -13,6 +13,7 @@ import {
   saveTeacherFeedback,
   type TeacherFeedback,
 } from '../types/feedback'
+import thinkmathLogo from '../assets/thinkmath_logo.jpeg'
 
 const formatFileSize = (bytes: number) => {
   if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`
@@ -87,6 +88,11 @@ export default function TeacherStudentDetailPage() {
       <header className="sticky top-0 z-20 border-b border-gray-100 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
+            <img
+              src={thinkmathLogo}
+              alt="ThinkMath"
+              className="h-9 w-auto object-contain"
+            />
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
               {user.name[0].toUpperCase()}
             </div>

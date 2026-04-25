@@ -10,6 +10,7 @@ import {
   saveStudentProgress,
   type StudentProgress,
 } from '../config/studentProgress'
+import thinkmathLogo from '../assets/thinkmath_logo.jpeg'
 
 const courseLabel = (id: string) =>
   AVAILABLE_COURSES.find((course) => course.id === id)?.label ?? id
@@ -92,6 +93,11 @@ export default function DashboardPage() {
       <header className="sticky top-0 z-20 border-b border-gray-100 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
+            <img
+              src={thinkmathLogo}
+              alt="ThinkMath"
+              className="h-9 w-auto object-contain"
+            />
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
               {user?.name[0].toUpperCase()}
             </div>
